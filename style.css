@@ -1,0 +1,78 @@
+*{
+   margin: 0;
+   padding: 0; 
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart{
+    width: 100px;
+    height: 100px;
+    background-color: #FF6666;
+    position: relative;
+    transform: rotate(45deg);
+    box-shadow: -6px -7px 85px 28px rgba(255, 125, 125,0.64);
+    -webkit-box-shadow: -6px -7px 85px 28px rgba(255, 125, 125,0.64);
+    -moz-box-shadow: -6px -7px 85px 28px rgba(255, 125, 125,0.64);
+    animation: heartbeat 2s linear infinite;
+} 
+
+.heart::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #FF6666;
+    position: absolute;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.heart::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #FF6666;
+    position: absolute;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 150px;
+    align-items: center;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
+@keyframes heartbeat {
+    0%{
+        transform: rotate(45deg)  scale(1);
+
+    }
+    25%{
+        transform: rotate(45deg)  scale(1.2);
+        
+    }
+    50%{
+        transform: rotate(45deg)  scale(1.5);
+        
+    }
+    75%{
+        transform: rotate(45deg)  scale(1.2);
+        
+    }
+    100%{
+        transform: rotate(45deg)  scale(1);
+        
+    }
+}
